@@ -1,0 +1,8 @@
+{% for blog in blogs %}
+    <h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>
+    <p><strong>Author:</strong> {{ blog.author }}</p>
+    <p><strong>Published Date:</strong> {{ blog.published_date }}</p>
+    <p>{{ blog.content|truncatewords:20 }}</p>
+    <hr>
+{% endfor %}
+<a href="{% url 'blog_create' %}">Create New Blog</a>
